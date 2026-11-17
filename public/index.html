@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="tk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Türkmenistanda öý gözläň, bildirişleri deňeşdiriň we öz emlägiňizi ýerleşdiriň.">
+<title>Salgy — Türkmenistanyň emläk bazary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+<header class="header"><div class="wrap top">
+<a href="/" class="brand" aria-label="Salgy baş sahypa"><span class="brand-icon" data-icon="logo"></span>Salgy</a>
+<nav aria-label="Esasy menýu"><button data-mode="buy">Satyn almak</button><button data-mode="rent">Kärende</button><button data-mode="commercial">Täjirçilik</button><a href="#tools">Hyzmatlar</a></nav>
+<div class="top-actions"><button class="icon" data-action="workspace" data-tab="saved" aria-label="Halanlarym" title="Halanlarym"><span data-icon="heart"></span></button><button class="icon account" data-action="workspace" data-tab="overview" aria-label="Şahsy otagym" title="Şahsy otagym"><span data-icon="user"></span></button><button class="btn small" data-action="publish"><span data-icon="plus"></span> Bildiriş goş</button></div>
+</div></header>
+<main>
+<section class="hero" aria-labelledby="hero-title">
+<div class="wrap hero-in"><div class="eyebrow pill"><span data-icon="pin"></span>TÜRKMENISTANYŇ EMLÄK BAZARY</div>
+<h1 id="hero-title">Täze öýüňiz<br>şu ýerden başlanýar<span>.</span></h1>
+<p>Aşgabatda we welaýatlarda satylýan ýa-da kärendesine berilýän emläkleri tapyň.</p>
+<div class="searchbox">
+<div class="tabs" aria-label="Emläk görnüşi"><button data-mode="buy" aria-pressed="true">Satyn almak</button><button data-mode="rent" aria-pressed="false">Kärende</button><button data-mode="commercial" aria-pressed="false">Täjirçilik</button><button type="button" class="assistant-trigger" data-action="assistant"><span data-icon="sparkles"></span> Gözleg kömekçi</button></div>
+<form id="search" class="search-form">
+<label><span>Ýerleşýän ýeri</span><div class="field"><span data-icon="pin"></span><input name="location" list="locations" placeholder="Şäher, welaýat ýa-da etrap" maxlength="80"></div></label>
+<label><span>Emlägiň görnüşi</span><div class="field"><span data-icon="building"></span><select name="type" id="type"></select></div></label>
+<label><span>Iň ýokary baha</span><div class="field"><input name="max" type="number" min="1" step="any" placeholder="Islendik baha"><small>TMT</small></div></label>
+<button class="btn find"><span data-icon="search"></span> Gözle</button>
+</form>
+</div><div class="quick"><span>Çalt gözleg</span><button data-quick="district" data-value="Berkararlyk">Berkararlyk</button><button data-quick="district" data-value="Köpetdag">Köpetdag</button><button data-quick="rooms" data-value="3">3 otagly öýler</button></div><button class="photo-credit" type="button" data-action="credits">Fotosurat çeşmesi</button></div>
+</section>
+<datalist id="locations"></datalist>
+<section class="wrap section listings" id="listings"><div class="section-head"><div><div class="eyebrow">TÜRKMENISTANDA EMLÄK</div><h2 id="result-title">Emläk bildirişleri</h2><p id="result-note"></p></div><div class="row listing-buttons"><button class="outline" data-action="filters"><span data-icon="sliders"></span> Süzgüçler</button><button class="outline" data-action="map"><span data-icon="map"></span> Karta</button></div></div>
+<div id="results-tools" class="results-tools" hidden><button class="text-btn" data-action="save-search"><span data-icon="bell"></span> Gözlegi sakla</button><button class="text-btn" data-action="compare">Deňeşdir <span id="comparison-count"></span></button><label>Tertip <select id="sort"><option value="new">Iň täzeler</option><option value="asc">Arzan ilki</option><option value="desc">Gymmat ilki</option><option value="area">Giň meýdan ilki</option></select></label></div>
+<div id="result-grid" class="grid" aria-live="polite"></div></section>
+<section class="districts" id="places"><div class="wrap section"><div class="section-head"><div><div class="eyebrow">ÝERLER BOÝUNÇA GÖZLEG</div><h2>Aşgabadyň etraplary we welaýatlar</h2><p>Aşgabatdan ýa-da bäş welaýatyň islendik birinden gözleg başlaň.</p></div><button class="outline" data-action="map"><span data-icon="map"></span> Kartada gör</button></div><div class="place-grid" id="place-grid"></div></div></section>
+<section class="wrap section" id="tools"><div class="section-head"><div><div class="eyebrow">EMLÄK HYZMATLARY</div><h2>Kararyňyzy meýilleşdiriň</h2></div></div>
+<div class="tool-grid">
+<button data-action="valuation"><span class="tool-icon" data-icon="chart"></span><strong>Emlägiň bahasy</strong><span>Meýdana we saýlan nyrhyňyza görä bahany hasaplaň.</span><span data-icon="arrow"></span></button>
+<button data-action="finance"><span class="tool-icon" data-icon="calculator"></span><strong>Karz hasaplaýjysy</strong><span>Karzyň aýlyk tölegini we umumy çykdajysyny görüň.</span><span data-icon="arrow"></span></button>
+<button data-action="agents"><span class="tool-icon" data-icon="user"></span><strong>Emläk araçylary</strong><span>Emläk hünärmenlerini gözläň ýa-da öz profiliňizi goşuň.</span><span data-icon="arrow"></span></button>
+<button data-action="checklist"><span class="tool-icon" data-icon="checklist"></span><strong>Göçmek meýilnamasy</strong><span>Ýerine ýetirilen işleri belläp, meýilnamaňyzy saklaň.</span><span data-icon="arrow"></span></button>
+</div></section>
+<section class="wrap owner-wrap"><div class="owner"><div class="eyebrow">EMLÄK EÝELERI ÜÇIN</div><h2>Emlägiňizi Salgyda ýerleşdiriň.</h2><p>Suratlary, bahany we maglumatlary goşuň. Gelýän ýüz tutmalary bir ýerden görüň.</p><button class="btn" data-action="publish"><span data-icon="plus"></span> Bildiriş döret</button></div></section>
+</main>
+<footer><div class="wrap foot"><a href="/" class="brand">Salgy</a><span>Türkmenistanyň emläk bazary</span><button type="button" data-action="credits">Fotosurat çeşmeleri</button></div></footer>
+<noscript><p>Salgy ulanmak üçin brauzeriňizde JavaScript işjeň bolmaly.</p></noscript>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="modal"><div class="modal-head"><h2 id="dialog-title"></h2><button class="icon" data-action="close" aria-label="Ýap"><span data-icon="x"></span></button></div><div id="dialog-body"></div><div id="dialog-status" role="status" aria-live="polite"></div></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>

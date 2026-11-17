@@ -1,0 +1,16 @@
+{
+  "name": "salgy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Salgy property marketplace",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test",
+    "check": "node --check server.mjs && node --check public/app.js && node --check public/assistant.js && node --check public/map.js && node --check public/locations.js"
+  }
+}
